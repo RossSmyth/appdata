@@ -8,4 +8,5 @@ require('packer').startup(function()
   use { 'simrat39/rust-tools.nvim', requires = {'neovim/nvim-lspconfig', 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap'}}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   use {'nvim-telescope/telescope.nvim', tag = '0.1.0', require = {'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-fzf-native.nvim'}}
+  use 'folke/tokyonight.nvim'
 end)

@@ -43,7 +43,7 @@ rt.setup({
 		inlay_hints = {
 			parameter_hints_prefix = "",
 			other_hints_prefix = "",
-			highlight = "Comment",
+			highlight = "Visual",
 		},
 		hover_actions = {
 			auto_focus = true,
@@ -74,7 +74,13 @@ rt.setup({
     }
 })
 
+vim.g.tokyonight_italic_comments = false
+vim.g.tokyonight_italic_keywords = false
+vim.g.tokyonight_italic_functions = false
+vim.g.tokyonight_italic_variables = false
+
 vim.cmd [[
+  colorscheme tokyonight
   tnoremap <Esc> <C-\><C-n>
   belowright 7new +terminal
   CHADopen
