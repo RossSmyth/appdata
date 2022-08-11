@@ -10,4 +10,5 @@ require('packer').startup(function()
   use {'nvim-telescope/telescope.nvim', tag = '0.1.0', require = {'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-fzf-native.nvim'}}
   use 'folke/tokyonight.nvim'
   use {'https://git.sr.ht/~whynothugo/lsp_lines.nvim', as = 'lsp_lines'}
+  use 'stevearc/overseer.nvim'
 end)
