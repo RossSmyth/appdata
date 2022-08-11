@@ -16,12 +16,16 @@ else
 end
 
 require('plugins')
-require('lspconfig').pyright.setup{}
 require('chadtree')
 require('coq')
 require('coq_3p') {
 	{src = "nvimlua", short_name = "nLUA", conf_only = true }
 }
+require('lspconfig').pyright.setup{}
+require("lsp_lines").setup()
+vim.diagnostic.config({
+	virtual_text = false,
+})
 require('fzf_lib')
 local tele = require('telescope')
 tele.setup {
