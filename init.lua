@@ -27,6 +27,9 @@ vim.diagnostic.config({
 	virtual_text = false,
 })
 require('fzf_lib')
+require('overseer').setup()
+require('gitsigns').setup()
+
 local tele = require('telescope')
 tele.setup {
   extensions = {
@@ -67,8 +70,8 @@ rt.setup({
 			vim.api.nvim_buf_create_user_command(
 				bufnr,
 				'Rename',
-				function() require('renamer').rename() end,
-				{}
+				function(opts) vim.lsp.buf.rename(opts.args) end,
+				{nargs = 1}
 			)
 		end,
         cmd = { 'C:\\Users\\crs20\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe'}, 
@@ -84,13 +87,17 @@ rt.setup({
 		}
     }
 })
-
-require('overseer').setup()
-require('gitsigns').setup()
-require('renamer').setup {
-	with_popup = false
+require("lspsaga").init_lsp_saga {
+code_action_lightbulb = {
+    enable = true,
+    sign = true,
+    enable_in_insert = true,
+    sign_priority = 20,
+    virtual_text = false,
 }
-			
+}
+
+	
 vim.g.tokyonight_italic_comments = false
 vim.g.tokyonight_italic_keywords = false
 vim.g.tokyonight_italic_functions = false

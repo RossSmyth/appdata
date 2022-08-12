@@ -12,5 +12,5 @@ require('packer').startup(function()
   use {'https://git.sr.ht/~whynothugo/lsp_lines.nvim', as = 'lsp_lines'}
   use 'stevearc/overseer.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use {'filipdutescu/renamer.nvim', branch = 'master', requires = {'nvim-lua/plenary.nvim'} }
+  use 'glepnir/lspsaga.nvim'
 end)
