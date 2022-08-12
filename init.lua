@@ -63,6 +63,13 @@ rt.setup({
 			vim.keymap.set("n", "E", rt.hover_actions.hover_actions, { buffer = bufnr, noremap=true })
 			-- Code action groups
 			vim.keymap.set("n", "Q", rt.code_action_group.code_action_group, { buffer = bufnr, noremap=true })
+			-- Rename
+			vim.api.nvim_buf_create_user_command(
+				bufnr,
+				'Rename',
+				function() require('renamer').rename() end,
+				{}
+			)
 		end,
         cmd = { 'C:\\Users\\crs20\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe'}, 
 		{
@@ -79,7 +86,11 @@ rt.setup({
 })
 
 require('overseer').setup()
-
+require('gitsigns').setup()
+require('renamer').setup {
+	with_popup = false
+}
+			
 vim.g.tokyonight_italic_comments = false
 vim.g.tokyonight_italic_keywords = false
 vim.g.tokyonight_italic_functions = false
