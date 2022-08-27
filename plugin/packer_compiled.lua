@@ -69,6 +69,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bufferline.nvim"] = {
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\crs20\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   chadtree = {
     config = { "\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rchadtree\frequire\0" },
     loaded = true,
@@ -76,7 +82,7 @@ _G.packer_plugins = {
     url = "https://github.com/ms-jpq/chadtree"
   },
   ["coq.thirdparty"] = {
-    config = { "\27LJ\2\n`\0\0\4\0\3\0\b6\0\0\0'\2\1\0B\0\2\0024\2\3\0005\3\2\0>\3\1\2B\0\2\1K\0\1\0\1\0\3\15short_name\tnLUA\14conf_only\2\bsrc\fnvimlua\vcoq_3p\frequire\0" },
+    config = { "\27LJ\2\n`\0\0\4\0\3\0\b6\0\0\0'\2\1\0B\0\2\0024\2\3\0005\3\2\0>\3\1\2B\0\2\1K\0\1\0\1\0\3\14conf_only\2\bsrc\fnvimlua\15short_name\tnLUA\vcoq_3p\frequire\0" },
     loaded = true,
     path = "C:\\Users\\crs20\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\coq.thirdparty",
     url = "https://github.com/ms-jpq/coq.thirdparty"
@@ -100,7 +106,7 @@ _G.packer_plugins = {
     url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
   },
   ["lspsaga.nvim"] = {
-    config = { "\27LJ\2\n£\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\26code_action_lightbulb\1\0\0\1\0\5\tsign\2\18sign_priority\3\20\17virtual_text\1\venable\2\21enable_in_insert\2\18init_lsp_saga\flspsaga\frequire\0" },
+    config = { "\27LJ\2\n£\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\26code_action_lightbulb\1\0\0\1\0\5\venable\2\18sign_priority\3\20\21enable_in_insert\2\tsign\2\17virtual_text\1\18init_lsp_saga\flspsaga\frequire\0" },
     loaded = true,
     path = "C:\\Users\\crs20\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
@@ -115,6 +121,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\crs20\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\crs20\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["overseer.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\roverseer\frequire\0" },
@@ -158,50 +169,54 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: tokyonight.nvim
-time([[Config for tokyonight.nvim]], true)
-try_loadstring("\27LJ\2\nÿ\1\0\0\3\0\b\0\0216\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\0\0009\0\1\0+\1\1\0=\1\3\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\0\0009\0\1\0+\1\1\0=\1\5\0006\0\0\0009\0\6\0'\2\a\0B\0\2\1K\0\1\0000            colorscheme tokyonight\n        \bcmd tokyonight_italic_variables tokyonight_italic_functions\31tokyonight_italic_keywords\31tokyonight_italic_comments\6g\bvim\0", "config", "tokyonight.nvim")
-time([[Config for tokyonight.nvim]], false)
--- Config for: chadtree
-time([[Config for chadtree]], true)
-try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rchadtree\frequire\0", "config", "chadtree")
-time([[Config for chadtree]], false)
--- Config for: coq.thirdparty
-time([[Config for coq.thirdparty]], true)
-try_loadstring("\27LJ\2\n`\0\0\4\0\3\0\b6\0\0\0'\2\1\0B\0\2\0024\2\3\0005\3\2\0>\3\1\2B\0\2\1K\0\1\0\1\0\3\15short_name\tnLUA\14conf_only\2\bsrc\fnvimlua\vcoq_3p\frequire\0", "config", "coq.thirdparty")
-time([[Config for coq.thirdparty]], false)
--- Config for: rust-tools.nvim
-time([[Config for rust-tools.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\1\4\0\5\0\a6\1\0\0009\1\1\0019\1\2\0019\1\3\0019\3\4\0B\1\2\1K\0\1\0\targs\vrename\bbuf\blsp\bvim\2\1\2\b\1\16\0\0316\2\0\0009\2\1\0029\2\2\2'\4\3\0'\5\4\0-\6\0\0009\6\5\0069\6\5\0065\a\6\0=\1\a\aB\2\5\0016\2\0\0009\2\1\0029\2\2\2'\4\3\0'\5\b\0-\6\0\0009\6\t\0069\6\t\0065\a\n\0=\1\a\aB\2\5\0016\2\0\0009\2\v\0029\2\f\2\18\4\1\0'\5\r\0003\6\14\0005\a\15\0B\2\5\1K\0\1\0\0À\1\0\1\nnargs\3\1\0\vRename!nvim_buf_create_user_command\bapi\1\0\1\fnoremap\2\22code_action_group\6Q\vbuffer\1\0\1\fnoremap\2\18hover_actions\6E\6n\bset\vkeymap\bvimü\3\1\0\b\0\25\0\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\n\0005\4\4\0005\5\3\0=\5\5\0045\5\6\0=\5\a\0045\5\b\0=\5\t\4=\4\v\0035\4\r\0003\5\f\0=\5\14\0045\5\15\0=\5\16\0045\5\22\0005\6\18\0005\a\17\0=\a\19\0065\a\20\0=\a\21\6=\6\23\5>\5\1\4=\4\24\3B\1\2\0012\0\0€K\0\1\0\vserver\18rust-analyzer\1\0\0\16checkOnSave\1\0\1\fcommand\vclippy\16diagnostics\1\0\0\1\0\1\17experimental\2\bcmd\1\2\0\0[C:\\Users\\crs20\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe\14on_attach\1\0\0\0\ntools\1\0\0\16crate_graph\1\0\2\voutput\14graph.svg\fbackend\bSVG\18hover_actions\1\0\1\15auto_focus\2\16inlay_hints\1\0\0\1\0\3\23other_hints_prefix\5\27parameter_hints_prefix\5\14highlight\vVisual\nsetup\15rust-tools\frequire\0", "config", "rust-tools.nvim")
-time([[Config for rust-tools.nvim]], false)
--- Config for: coq_nvim
-time([[Config for coq_nvim]], true)
-try_loadstring("\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\bcoq\frequire\0", "config", "coq_nvim")
-time([[Config for coq_nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\nG\0\0\3\0\4\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fpyright\14lspconfig\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
--- Config for: lsp_lines
-time([[Config for lsp_lines]], true)
-try_loadstring("\27LJ\2\nr\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\1\17virtual_text\1\vconfig\15diagnostic\bvim\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines")
-time([[Config for lsp_lines]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
 -- Config for: overseer.nvim
 time([[Config for overseer.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\roverseer\frequire\0", "config", "overseer.nvim")
 time([[Config for overseer.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\n£\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\26code_action_lightbulb\1\0\0\1\0\5\tsign\2\18sign_priority\3\20\17virtual_text\1\venable\2\21enable_in_insert\2\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: chadtree
+time([[Config for chadtree]], true)
+try_loadstring("\27LJ\2\n(\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\rchadtree\frequire\0", "config", "chadtree")
+time([[Config for chadtree]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n£\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\26code_action_lightbulb\1\0\0\1\0\5\venable\2\18sign_priority\3\20\21enable_in_insert\2\tsign\2\17virtual_text\1\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: lsp_lines
+time([[Config for lsp_lines]], true)
+try_loadstring("\27LJ\2\nr\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0005\2\6\0B\0\2\1K\0\1\0\1\0\1\17virtual_text\1\vconfig\15diagnostic\bvim\nsetup\14lsp_lines\frequire\0", "config", "lsp_lines")
+time([[Config for lsp_lines]], false)
+-- Config for: rust-tools.nvim
+time([[Config for rust-tools.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\1\4\0\5\0\a6\1\0\0009\1\1\0019\1\2\0019\1\3\0019\3\4\0B\1\2\1K\0\1\0\targs\vrename\bbuf\blsp\bvim\2\1\2\b\1\16\0\0316\2\0\0009\2\1\0029\2\2\2'\4\3\0'\5\4\0-\6\0\0009\6\5\0069\6\5\0065\a\6\0=\1\a\aB\2\5\0016\2\0\0009\2\1\0029\2\2\2'\4\3\0'\5\b\0-\6\0\0009\6\t\0069\6\t\0065\a\n\0=\1\a\aB\2\5\0016\2\0\0009\2\v\0029\2\f\2\18\4\1\0'\5\r\0003\6\14\0005\a\15\0B\2\5\1K\0\1\0\0À\1\0\1\nnargs\3\1\0\vRename!nvim_buf_create_user_command\bapi\1\0\1\fnoremap\2\22code_action_group\6Q\vbuffer\1\0\1\fnoremap\2\18hover_actions\6E\6n\bset\vkeymap\bvimü\3\1\0\b\0\25\0\0306\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\n\0005\4\4\0005\5\3\0=\5\5\0045\5\6\0=\5\a\0045\5\b\0=\5\t\4=\4\v\0035\4\r\0003\5\f\0=\5\14\0045\5\15\0=\5\16\0045\5\22\0005\6\18\0005\a\17\0=\a\19\0065\a\20\0=\a\21\6=\6\23\5>\5\1\4=\4\24\3B\1\2\0012\0\0€K\0\1\0\vserver\18rust-analyzer\1\0\0\16checkOnSave\1\0\1\fcommand\vclippy\16diagnostics\1\0\0\1\0\1\17experimental\2\bcmd\1\2\0\0[C:\\Users\\crs20\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe\14on_attach\1\0\0\0\ntools\1\0\0\16crate_graph\1\0\2\voutput\14graph.svg\fbackend\bSVG\18hover_actions\1\0\1\15auto_focus\2\16inlay_hints\1\0\0\1\0\3\23other_hints_prefix\5\27parameter_hints_prefix\5\14highlight\vVisual\nsetup\15rust-tools\frequire\0", "config", "rust-tools.nvim")
+time([[Config for rust-tools.nvim]], false)
+-- Config for: coq.thirdparty
+time([[Config for coq.thirdparty]], true)
+try_loadstring("\27LJ\2\n`\0\0\4\0\3\0\b6\0\0\0'\2\1\0B\0\2\0024\2\3\0005\3\2\0>\3\1\2B\0\2\1K\0\1\0\1\0\3\14conf_only\2\bsrc\fnvimlua\15short_name\tnLUA\vcoq_3p\frequire\0", "config", "coq.thirdparty")
+time([[Config for coq.thirdparty]], false)
+-- Config for: tokyonight.nvim
+time([[Config for tokyonight.nvim]], true)
+try_loadstring("\27LJ\2\nÿ\1\0\0\3\0\b\0\0216\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\0\0009\0\1\0+\1\1\0=\1\3\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\0\0009\0\1\0+\1\1\0=\1\5\0006\0\0\0009\0\6\0'\2\a\0B\0\2\1K\0\1\0000            colorscheme tokyonight\n        \bcmd tokyonight_italic_variables tokyonight_italic_functions\31tokyonight_italic_keywords\31tokyonight_italic_comments\6g\bvim\0", "config", "tokyonight.nvim")
+time([[Config for tokyonight.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\nG\0\0\3\0\4\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fpyright\14lspconfig\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\nÝ\1\0\0\6\0\n\0\0176\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0029\1\3\0005\3\a\0005\4\5\0005\5\4\0=\5\6\4=\4\b\3B\1\2\0019\1\t\0'\3\6\0B\1\2\1K\0\1\0\19load_extension\15extensions\1\0\0\bfzf\1\0\0\1\0\4\nfuzzy\2\14case_mode\15smart_case\25override_file_sorter\2\28override_generic_sorter\2\nsetup\14telescope\ffzf_lib\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: coq_nvim
+time([[Config for coq_nvim]], true)
+try_loadstring("\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\bcoq\frequire\0", "config", "coq_nvim")
+time([[Config for coq_nvim]], false)
 if should_profile then save_profiles() end
 
 end)
