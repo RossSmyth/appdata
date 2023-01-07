@@ -24,6 +24,9 @@ local M = {
             },
             server = {
                 on_attach = function(_, bufnr)
+                    -- Make sure omnifunc uses the LSP values
+                    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+                    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
                     -- Hover actions
                     vim.keymap.set("n", "E", rt.hover_actions.hover_actions, { buffer = bufnr, noremap=true })
                     -- Code action groups
@@ -36,7 +39,7 @@ local M = {
                         {nargs = 1}
                     )
                 end,
-                cmd = { 'C:\\Users\\crs20\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe'}, 
+                cmd = { 'C:\\Users\\Ross\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe'}, 
                 {
                     ['rust-analyzer'] = {
                         diagnostics = {

@@ -2,7 +2,7 @@ local M = {
     'nvim-telescope/telescope.nvim',
     requires = {
         {'nvim-lua/plenary.nvim'},
-	{'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'}
+	{'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release; cmake --build build --config Release; cmake --install build --prefix build'}
     },
     config = function()
         require('fzf_lib')

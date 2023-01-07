@@ -1,6 +1,6 @@
 local M = {
     'akinsho/bufferline.nvim',
-    tag = '2.*',
+    tag = 'v3.*',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
         require'bufferline'.setup{}
