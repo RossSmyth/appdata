@@ -1,8 +1,9 @@
-local coq = {
+local M = {
     'ms-jpq/coq_nvim',
     config = function()
         require'coq'
-    end
+    end,
+    branch = 'coq'
 }
 
-return coq
+return M

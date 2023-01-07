@@ -2,7 +2,7 @@ local use = require('packer').use
 require('packer').startup(function()
   use  (require'.packer_config')
   use  (require'.lspconfig_config') 
-  use  (require'.coq')
+  use  (require'.coq_config')
   use  (require'.coq3p')
   use  (require'.chad')
   use  (require'.telescope_config')
