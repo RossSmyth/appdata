@@ -7,7 +7,8 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.g.python3_host_prog = 'C:\\dev\\nvim\\py3nvim\\Scripts\\python.exe'
-
+vim.opt.mouse = nil 
+vim.opt.completeopt = "menu"
 vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
 vim.opt.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
 vim.opt.shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait'
