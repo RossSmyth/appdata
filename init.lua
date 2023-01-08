@@ -19,8 +19,9 @@ if vim.fn.executable('pwsh') == 1 then
 else 
 	vim.opt.shell = 'powershell' 
 end
-
-require('plugins')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.opt.rtp:prepend(lazypath)
+require'lazy'.setup('plugins', {})
 
 vim.cmd [[
   tnoremap <Esc> <C-\><C-n>
