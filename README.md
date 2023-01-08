@@ -5,4 +5,4 @@ Requires:
 * Neovim
 * Cargo
 * git
-* [packer](git@github.com:RossSmyth/nvim.git)
+* [lazy](https://github.com/folke/lazy.nvim)
