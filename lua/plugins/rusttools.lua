@@ -39,7 +39,7 @@ return {
                     {nargs = 1}
                 )
             end,
-            cmd = { 'C:\\Users\\Ross\\.rustup\\toolchains\\nightly-x86_64-pc-windows-msvc\\bin\\rust-analyzer.exe' }, 
+            cmd = { vim.fn.resolve('~') .. [[\.rustup\toolchains\nightly-x86_64-pc-windows-msvc\bin\rust-analyzer.exe]] }, 
             {
                 ['rust-analyzer'] = {
                     diagnostics = {
