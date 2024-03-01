@@ -1,0 +1,76 @@
+set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
+
+default:
+  just --list
+
+export RUSTFLAGS := "-Cembed-bitcode=yes -Ctarget-cpu=native -Cprefer-dynamic=no"
+
+[private]
+[no-exit-message]
+@probe-7zip:
+    7z | out-null
+
+# Installs ripgrep find llvm just mpv-install
+install-all: ripgrep find llvm just mpv-install
+
+# Updates ripgrep find mpv rust
+update-all: ripgrep find mpv rust
+
+nvim-data := env_var("LOCALAPPDATA") + "/nvim-data"
+dev := env_var("USERPROFILE") + "/dev"
+
+# Updates rust toolchain(s)
+rust:
+    rustup update
+
+# Installs & updates just
+just:
+    -git.exe clone https://github.com/casey/just.git {{dev}}/just
+    git -C {{dev}}/just pull
+    echo "run 'cargo +nightly install --locked --path {{dev}}/just' because just cannot update itself"
+
+# Installs & updates ripgrep
+ripgrep:
+    -git.exe clone https://github.com/BurntSushi/ripgrep.git {{dev}}/ripgrep
+    git -C {{dev}}/ripgrep pull
+    -cargo +nightly install --locked --features "pcre2 simd-accel" --path {{dev}}/ripgrep
+
+# Installs & updates find
+find:
+    -git clone https://github.com/sharkdp/fd.git {{dev}}/fd
+    git -C {{dev}}/fd pull
+    cargo +nightly install --locked --path {{dev}}/fd
+
+mpv_latest := "https://api.github.com/repos/shinchiro/mpv-winbuild-cmake/releases/latest"
+mpv_dir := data_directory() + "/mpv"
+
+# Install mpv
+mpv-install:
+    mkdir {{mpv_dir}}
+    $url = (Invoke-RestMethod {{mpv_latest}}).assets.Where( {$_.name -like "mpv-x86_64-v3*"} ).browser_download_url; \
+    Invoke-WebRequest $url -OutFile {{mpv_dir}}/mpv.7z
+    7z x {{mpv_dir}}/mpv.7z -o{{data_directory()}}/mpv
+
+    git clone https://github.com/RossSmyth/mpv_config.git {{mpv_dir}}/portable_config
+
+# Updates mpv & config
+mpv:
+    {{mpv_dir}}/updater.bat
+    git -C {{mpv_dir}}/portable_config pull
+
+
+llvm_latest := "https://api.github.com/repos/llvm/llvm-project/releases/latest"
+
+# Installs & updates LLVM
+llvm: probe-7zip
+    $url = (Invoke-RestMethod {{llvm_latest}}).assets.Where( {$_.name -like "*win64*"} ).browser_download_url; \
+    Invoke-WebRequest $url -OutFile {{dev}}/llvm.nsis
+    -rm -R {{dev}}/llvm
+    7z x {{dev}}/llvm.nsis -o"{{dev}}/llvm" -x!$PLUGINSDIR -x!"Uninstall.exe"
+    rm {{dev}}/llvm.nsis
+
+nvim-lazy:
+    git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable {{nvim-data}}"/lazy/lazy.nvim"
+
+nvim-git:
+    git config --global --replace-all core.editor "nvim"
