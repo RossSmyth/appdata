@@ -69,11 +69,16 @@ llvm_latest := "https://api.github.com/repos/llvm/llvm-project/releases/latest"
 # Installs & updates LLVM
 llvm: probe-7zip
     $ProgressPreference = 'SilentlyContinue'; \
-    $url = (Invoke-RestMethod {{llvm_latest}}).assets.Where( {$_.name -like "*win64*"} ).browser_download_url; \
-    Invoke-WebRequest $url -OutFile {{data_directory()}}/llvm.nsis
-    -rm -R {{data_directory()}}/llvm
-    7z x {{data_directory()}}/llvm.nsis -o"{{data_directory()}}/llvm" -x!$PLUGINSDIR -x!"Uninstall.exe"
-    rm {{data_directory()}}/llvm.nsis
+    $json = $json = curl.exe "https://api.github.com/repos/llvm/llvm-project/releases/latest" | ConvertFrom-Json; \
+    $url = $json.assets.Where( {$_.name -like "*windows*"} ).browser_download_url; \
+    Write-Output $url; \
+    curl.exe -L --output "{{data_directory()}}/llvm.tar.xz" "$url"
+    7z e {{data_directory()}}/llvm.tar.xz -o"{{data_directory()}}/llvm_tar" *.tar
+    7z x {{data_directory()}}/llvm_tar/llvm.tar -o"{{data_directory()}}/llvm_new"
+    rm {{data_directory()}}/llvm.tar.xz
+    rm -R {{data_directory()}}/llvm_tar
+    rm -R {{data_directory()}}/llvm
+    mv "{{data_directory()}}/llvm_new/clang*" "{{data_directory()}}/llvm"
 
 nvim-lazy:
     git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable {{nvim-data}}"/lazy/lazy.nvim"
