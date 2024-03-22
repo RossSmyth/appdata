@@ -32,7 +32,7 @@ just:
 ripgrep:
     -git.exe clone https://github.com/BurntSushi/ripgrep.git {{data_directory()}}/ripgrep
     git -C {{data_directory()}}/ripgrep pull
-    -cargo +nightly install --locked --features "pcre2 simd-accel" --path {{data_directory()}}/ripgrep
+    -cargo +nightly install --locked --features "pcre2" --path {{data_directory()}}/ripgrep
 
 # Installs & updates find
 find:
