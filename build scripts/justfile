@@ -3,7 +3,7 @@ set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 default:
   just --list
 
-export RUSTFLAGS := "-Cembed-bitcode=yes -Ctarget-cpu=native -Cprefer-dynamic=no"
+export RUSTFLAGS := "-Ctarget-cpu=native -Cprefer-dynamic=no"
 
 [private]
 [no-exit-message]
@@ -11,10 +11,10 @@ export RUSTFLAGS := "-Cembed-bitcode=yes -Ctarget-cpu=native -Cprefer-dynamic=no
     7z | out-null
 
 # Installs ripgrep find llvm just mpv-install
-install-all: ripgrep find just mpv-install
+install-all: ripgrep find oxipng mpv-install helix llvm
 
 # Updates ripgrep find mpv rust
-update-all: ripgrep find oxipng rust mpv
+update-all: ripgrep find oxipng just llvm rust mpv
 
 nvim-data := env_var("LOCALAPPDATA") + "/nvim-data"
 
@@ -26,13 +26,20 @@ rust:
 just:
     -git.exe clone https://github.com/casey/just.git {{data_directory()}}/just
     git -C {{data_directory()}}/just pull
-    echo "run 'cargo +nightly install --locked --path {{data_directory()}}/just' because just cannot update itself"
+    # Just cannot install itself :(
+    echo "cargo +nightly install --locked --path {{data_directory()}}/just"
 
 # Installs & updates ripgrep
 ripgrep:
     -git.exe clone https://github.com/BurntSushi/ripgrep.git {{data_directory()}}/ripgrep
     git -C {{data_directory()}}/ripgrep pull
     -cargo +nightly install --locked --features "pcre2" --path {{data_directory()}}/ripgrep
+
+# Installs & updates Helix
+helix:
+    -git.exe clone https://github.com/helix-editor/helix.git {{data_directory()}}/helix
+    git -C {{data_directory()}}/helix pull
+    -cargo +nightly install --locked --features "pcre2" --path {{data_directory()}}/helix
 
 # Installs & updates find
 find:
@@ -79,9 +86,3 @@ llvm: probe-7zip
     rm -R {{data_directory()}}/llvm_tar
     rm -R {{data_directory()}}/llvm
     mv "{{data_directory()}}/llvm_new/clang*" "{{data_directory()}}/llvm"
-
-nvim-lazy:
-    git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable {{nvim-data}}"/lazy/lazy.nvim"
-
-nvim-git:
-    git config --global --replace-all core.editor "nvim"
