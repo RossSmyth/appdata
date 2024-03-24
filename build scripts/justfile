@@ -39,7 +39,7 @@ ripgrep:
 helix:
     -git.exe clone https://github.com/helix-editor/helix.git {{data_directory()}}/helix
     git -C {{data_directory()}}/helix pull
-    -cargo +nightly install --locked --features "pcre2" --path {{data_directory()}}/helix
+    -cargo +nightly install --locked --features "unicode-lines" --path {{data_directory()}}/helix/helix-term
 
 # Installs & updates find
 find:
