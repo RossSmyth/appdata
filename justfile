@@ -14,7 +14,7 @@ export RUSTFLAGS := "-Ctarget-cpu=native -Cprefer-dynamic=no"
 install-all: ripgrep find oxipng mpv-install helix llvm
 
 # Updates ripgrep find mpv rust
-update-all: rust ripgrep find oxipng just helix llvm mpv
+update-all: rust ripgrep find oxipng just llvm mpv helix
 
 # Updates rust toolchain(s)
 rust:
