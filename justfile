@@ -38,6 +38,9 @@ helix:
     -git.exe clone https://github.com/helix-editor/helix.git {{data_local_directory()}}/helix
     git -C {{data_local_directory()}}/helix pull
     -cargo +nightly install --locked --features "unicode-lines" --path {{data_local_directory()}}/helix/helix-term
+    helix-copy
+
+helix-copy: 
     robocopy  "{{data_local_directory()}}\\helix\\runtime" "{{data_directory()}}\\helix\\runtime" /MIR /E /NFL /NDL /PURGE
 
 # Installs & updates find
