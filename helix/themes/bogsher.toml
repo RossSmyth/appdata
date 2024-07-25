@@ -1,0 +1,9 @@
+inherits = "bogster"
+
+
+"variable.other.member" = "bogster-fg1"
+"variable" = "bogster-fg1"
+"variable.parameter" = "bogster-fg1"
+"identifier" = "bogster-fg1"
+
+"ui.virtual.inlay-hint" = "bogster-fg0" 
