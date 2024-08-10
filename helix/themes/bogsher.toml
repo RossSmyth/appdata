@@ -10,3 +10,5 @@ inherits = "bogster"
 
 "ui.selection" = { bg = "bogster-base3" }
 "ui.selection.primary" = { bg = "bogster-base4" }
+
+"ui.virtual.jump-label" = { bg = "bogster-base3", modifiers = [ "bold" ] }
