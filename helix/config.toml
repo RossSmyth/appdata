@@ -18,4 +18,3 @@ display-messages = true
 
 [editor.file-picker]
 hidden = false
-git-ignore = false
