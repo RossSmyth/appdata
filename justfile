@@ -89,3 +89,8 @@ llvm: probe-7zip
     -rm -R {{data_local_directory()}}/llvm
     mv "{{data_local_directory()}}/llvm_new/clang*" "{{data_local_directory()}}/llvm"
     -rm -R {{data_local_directory()}}/llvm_new
+
+starship:
+    -git clone https://github.com/starship/starship.git {{data_local_directory()}}/starship
+    git -C {{data_local_directory()}}/starship pull
+    cargo +nightly install --locked --path {{data_local_directory()}}/starship
