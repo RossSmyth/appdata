@@ -79,7 +79,7 @@ llvm_latest := "https://api.github.com/repos/llvm/llvm-project/releases/latest"
 llvm: probe-7zip
     $ProgressPreference = 'SilentlyContinue'; \
     $json = $json = curl.exe "https://api.github.com/repos/llvm/llvm-project/releases/latest" | ConvertFrom-Json; \
-    $url = $json.assets.Where( {$_.name -like "*windows*"} ).browser_download_url; \
+    $url = $json.assets.Where( {$_.name -like "*windows*" -and $_.name -notlike "*.sig" } ).browser_download_url; \
     Write-Output $url; \
     curl.exe -L --output "{{data_local_directory()}}/llvm.tar.xz" "$url"
     7z e {{data_local_directory()}}/llvm.tar.xz -o"{{data_local_directory()}}/llvm_tar" *.tar
